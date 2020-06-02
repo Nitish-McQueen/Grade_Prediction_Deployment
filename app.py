@@ -3,17 +3,17 @@ from flask import Flask, render_template, request
 from sklearn.externals import joblib
 import pandas as pd
 import numpy as np
+import pickle
 
 app=Flask(__name__)
 # Load model_prediction
-mul_reg = open("Multiple_Regression_Student.pkl", "rb")
-ml_model = joblib.load(mul_reg)
+ml_model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route("/")
 def home():
     return render_template('home.html')
 
-@app.route("/predict", methods=['GET', 'POST'])
+@app.route("/predict", methods=['POST'])
 def predict():
     if request.method == 'POST':
         try:
