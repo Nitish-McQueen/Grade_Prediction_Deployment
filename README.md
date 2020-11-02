@@ -1,4 +1,4 @@
 
 Heroku Cloud Deployment
 
-link- http://studentprediction-api.herokuapp.com/
+link- https://studentprediction-api.herokuapp.com/
